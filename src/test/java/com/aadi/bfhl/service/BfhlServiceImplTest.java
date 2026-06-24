@@ -27,7 +27,7 @@ class BfhlServiceImplTest {
         bfhlService = new BfhlServiceImpl();
         // Inject properties manually since there's no Spring context
         ReflectionTestUtils.setField(bfhlService, "fullName", "aadi_attrey");
-        ReflectionTestUtils.setField(bfhlService, "dob", "27082055");
+        ReflectionTestUtils.setField(bfhlService, "dob", "27082005");
         ReflectionTestUtils.setField(bfhlService, "email", "aadi1753.be23@chitkara.edu.in");
         ReflectionTestUtils.setField(bfhlService, "rollNumber", "2310991753");
     }
@@ -41,7 +41,7 @@ class BfhlServiceImplTest {
         BfhlResponseDTO res = bfhlService.processData(req);
 
         assertTrue(res.isSuccess());
-        assertEquals("aadi_attrey_27082055", res.getUserId());
+        assertEquals("aadi_attrey_27082005", res.getUserId());
         assertEquals("aadi1753.be23@chitkara.edu.in", res.getEmail());
         assertEquals("2310991753", res.getRollNumber());
 
@@ -144,7 +144,7 @@ class BfhlServiceImplTest {
     void testUserId() {
         BfhlRequestDTO req = new BfhlRequestDTO(List.of("1"));
         BfhlResponseDTO res = bfhlService.processData(req);
-        assertEquals("aadi_attrey_27082055", res.getUserId());
+        assertEquals("aadi_attrey_27082005", res.getUserId());
     }
 
     @Test

@@ -42,7 +42,7 @@ class BfhlControllerTest {
     void testPostBfhlSuccess() throws Exception {
         BfhlResponseDTO mockResponse = BfhlResponseDTO.builder()
                 .isSuccess(true)
-                .userId("aadi_attrey_27082055")
+                .userId("aadi_attrey_27082005")
                 .email("aadi1753.be23@chitkara.edu.in")
                 .rollNumber("2310991753")
                 .oddNumbers(List.of("1"))
@@ -64,7 +64,7 @@ class BfhlControllerTest {
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success", is(true)))
-                .andExpect(jsonPath("$.user_id", is("aadi_attrey_27082055")))
+                .andExpect(jsonPath("$.user_id", is("aadi_attrey_27082005")))
                 .andExpect(jsonPath("$.email", is("aadi1753.be23@chitkara.edu.in")))
                 .andExpect(jsonPath("$.roll_number", is("2310991753")))
                 .andExpect(jsonPath("$.odd_numbers", hasItem("1")))
